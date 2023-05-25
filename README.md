@@ -1,3 +1,3 @@
 # analise
 aparecida ferreira
-aluno: breenda gomes de almeida   
+aluno: brenda gomes de  almeida
