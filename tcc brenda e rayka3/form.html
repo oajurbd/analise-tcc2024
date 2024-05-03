@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="topo">
+        <h3>10% de desconto em toda a loja</h3>
+      </header>
+        <header>
+            <div class="logo">
+              <a href="./index.html" style="text-decoration: none; color: #000000;"> <h1>JUDITE</h1></a>
+            </div>
+        </header>
+    
+        <nav>
+          
+      </nav>
+
+      <!--formulario de cadastro-->
+
+<div class="formulario"> 
+
+  <fieldset class="grupo">
+    <h2>Login</h2>     
+  <form method="post"action="recebe-dados.php">
+      <label for="email">Email</label>
+      <input type="email"id="email"name="email"required placeholder=" seu email">
+      <br> <br>
+    
+      <label for="senha">Senha</label>
+      <input type="password"id="senha" name="senha"placeholder=" sua senha ">
+      <br> <br>
+
+      <button type="submit" id="submit">Fazer login</button>
+
+  </form>
+  
+</fieldset> 
+ <hr class="break">  
+<fieldset class="grupo">
+      <h2>Cadastro</h2>     
+    <form method="post"action="recebe-dados.php">
+        <label for="name">Nome</label>
+        <input type="text"id="nome"name="nome"required placeholder=" seu nome ">
+        <br> <br>                   
+
+        <label for="email">Email</label>
+        <input type="email"id="email"name="email"required placeholder=" seu email">
+        <br> <br>
+      
+        <label for="senha">Senha</label>
+        <input type="password"id="senha" name="senha"placeholder="sua senha">
+        <br> <br>
+
+        <button type="submit" id="submit">Fazer cadastro</button>
+
+    </form>
+</fieldset> 
+
+
+</div> 
+
+<footer style="position: fixed;">
+  <p>&copy; 2024 JUDITE</p>
+</footer>
+</body>
+</html>
