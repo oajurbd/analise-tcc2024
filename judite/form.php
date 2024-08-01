@@ -1,3 +1,28 @@
+<?php
+ include("config.php");
+
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $cpf = $_POST['cpf'];
+        $cep = $_POST['cep'];
+        $endereco = $_POST['endereco'];
+        $numero = $_POST['numero'];
+        $complemento = $_POST['complemento'];
+        $telefone = $_POST['telefone'];
+
+        $sql = "INSERT INTO usuarios(nome,email,senha,cpf,cep,endereco,numero,complemento,telefone) 
+        VALUES('$nome','$email','$senha','$cpf','$cep','$endereco','$numero','$complemento','$telefone')";
+    
+if(mysqli_query($conexao, $sql)){
+    echo "Usuario cadastrado com sucesso";
+}
+else{
+    echo "Erro".mysqli_connect_error($conexao);
+}
+    mysqli_close($conexao);
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">

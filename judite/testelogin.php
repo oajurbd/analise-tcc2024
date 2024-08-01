@@ -1,43 +1,35 @@
 <?php
-     session_start();
-    //print_r($_REQUEST);
+session_start();
 
-    if(isset($_POST['submit']) &&!empty($_POST['email']) &&!empty($_POST['senha']))
-    {
-        include_once('config.php');
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
+if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
+    include_once('config.php');
 
-       // print_r('Email:' . $email);
-       // print_r('<br>');
-        //print_r('Senha:' . $senha);
+    $email = $_POST['email'];
+    $senha = $_POST['senha']; 
 
-        $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha '$senha'";
-        
-        $result = $conexao->mysqli_query($sql);
 
-       
-        // print_r($sql);
-        // print_r($result);
+    // Prepare a declaração SQL protegida contra injeção SQL
+    $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
+    $stmt->bind_param("ss", $email, $senha);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        if(mysqli_num_rows($result) < 1)
-        {
-            unset($_SESSION['email']);
-            unset($_SESSION['senha']);
-            header('Location: form.php');
-        }
-        else
-        {
-            $_SESSION['email'] = $email;
-            $_SESSION['senha'] = $senha;
-            header('Location: sistema.php');
-        }
-
-    }
-    else
-    {
-    //não acessa
+    if ($result->num_rows  < 1) {
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);
         header('Location: form.php');
+        exit;
+    } else {
+        // Não armazene a senha na sessão
+        $_SESSION['email'] = $email;
+        header('Location: sistema.php');
+        exit;
     }
 
+    $stmt->close();
+} else {
+    // Não acessa
+    header('Location: form.php');
+    exit;
+}
 ?>

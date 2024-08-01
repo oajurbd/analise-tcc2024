@@ -33,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $nome = $_POST["nome"];
   $descricao = $_POST["descricao"];
   $preco = converterParaFloat($_POST["preco"]);
+  $tamanho = $_POST["tamanho"];
+  $quantidade = $_POST["quantidade"];
   $categoria = $_POST["categoria"];
 
   // Validação de campos
@@ -46,6 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
   if (!validarCampo($preco)) {
     $erros[] = "O campo preço é obrigatório e deve ser um número válido.";
+  }
+  if (!validarCampo($tamanho)) {
+    $erros[] = "O campo tamanho é obrigatório.";
+  }
+  if (!validarCampo($quantidade)) {
+    $erros[] = "O campo quantidade é obrigatório.";
   }
   if (!validarCampo($categoria)) {
     $erros[] = "O campo categoria é obrigatório.";
@@ -63,12 +71,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   // Se não houver erros, cadastra o produto
   if (empty($erros)) {
-    $stmt = $conn->prepare("INSERT INTO produtos (imagem, nome, descricao, preco, categoria) VALUES (:imagem, :nome, :descricao, :preco, :categoria)");
+    $stmt = $conn->prepare("INSERT INTO produtos (imagem, nome, descricao, preco, tamanho, quantidade, categoria) VALUES (:imagem, :nome, :descricao, :preco, :tamanho, :quantidade, :categoria)");
     
     $stmt->bindParam(':imagem', $imagem_path);
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':descricao', $descricao);
     $stmt->bindParam(':preco', $preco);
+    $stmt->bindParam(':tamanho', $tamanho);
+    $stmt->bindParam(':quantidade', $quantidade);
     $stmt->bindParam(':categoria', $categoria);
 
     $stmt->execute();
@@ -115,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         form{
           flex-direction: column; 
           width: 1000px;
-          height: 550px;
+          height: 700px;
           
         }
         .grupo{
@@ -207,21 +217,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <br> 
             
                 <label for="preco">Preço</label>
-                <input type="float"id="preco" name="preco"placeholder="Preço do procuto">
+                <input type="float"id="preco" name="preco"placeholder="Preço do produto">
                 <br> 
                 
-                <!--<label for="tamanho">Tamanho</label>
-                <input type="text"id="tamanho" name="tamanho"placeholder="">
+                <label for="categoria">Tamanho</label>
+                <select class="tamanho" id="tamanho" name="tamanho" required>
+                <option value="" disabled selected>Selecione o tamanho</option>
+                <option value="PP">PP</option>
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+                <option value="GG">GG</option>
+            </select>
                 <br>
             
-                <label for="quantidade">quantidade</label>
-                <input type="number"id="quantidade" name="quantidade"placeholder="">
+                <label for="quantidade">Quantidade</label>
+                <input type="text"id="quantidade" name="quantidade"placeholder="Quantidade de camisetas">
                 <br>
-                -->
+               
                 <label for="categoria">Categoria</label>
                 <select class="categoria" id="categoria" name="categoria" required>
                     <option value="" disabled selected>Selecione a categoria</option>
-                    <option value="feminino">Adulto</option>
+                    <option value="adulto">Adulto</option>
                     <option value="infantil">Infantil</option>
                 </select>
                 <button type="submit" id="submit">Cadastrar produto</button>
