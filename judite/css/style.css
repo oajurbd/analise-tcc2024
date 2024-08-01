@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  
+}
+
+header {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  padding: 30px;
+  height: 100px;
+  
+}
+
+header img{
+  max-width: 50%;
+  height: auto;
+ 
+}
+
+.logo{
+  float: left;
+  cursor: pointer;
+}
+
+.carrinho{
+  float: right;
+  cursor: pointer;
+  margin: 15px;
+  font-size: 60px; 
+}
+
+nav{
+  background-color: #c7c7c7;
+  color: #000000;
+  width: auto;
+  padding: 25px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+nav a:hover{
+  color: #2b2b2b;
+  transition: 0,3s;
+}
+
+main {
+  padding: 20px;
+}
+
+.banner {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.banner h1{
+  background-color: #2e9599;
+  color: rgb(255, 255, 255);
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.banner2{
+  text-align: center;
+  padding: 70px;
+  background: #2e9599;
+  color: black;
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.banner4{
+  text-align: center;
+  padding: 70px;
+  background: #f46c3f;
+  color: black;
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+
+.lista-promoção{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.promoção img{
+  width: 300px;
+  height: 500px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-left: 50px;
+   
+}
+
+.lista-produtos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.produto{
+  width: 400px;
+  margin-bottom: 50px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+  box-shadow: 0px 2px 3px rgb(99, 99, 99);
+}
+
+.produto h3{
+  font-size: 25px;
+  padding: 5px;
+}
+.produto p{
+  font-size: 25px;
+  color: #747474;
+  margin-bottom: 10px;
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.produto:hover{
+  transform: scale(1.03);
+}
+
+footer {
+  background-color: #2b2b2b;
+  color: #f0ede7;
+  text-align: center;
+  padding: 8px 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 20px;
+  margin-top: 30px;
+}
+footer p{
+  padding: 30px;
+}
+
+.sobre{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  font-size: 15px;
+  justify-content: space-between;
+  
+}
+
+.cont{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  font-size: 15px;
+  justify-content: space-between;
+}
