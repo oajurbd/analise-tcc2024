@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (!validarCampo($categoria)) {
     $erros[] = "O campo categoria é obrigatório.";
   }
-  
+
   
   // Upload da imagem
   $imagem_path = null;
@@ -189,11 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
          <a href="./index.html"><img src="./logojudite.png" alt=""></a>
         </div>
 
-<div class="carrinho">
-            <a href="./form_produto.php"><ion-icon name="add-sharp"  style="color: #f4f3f0;"></ion-icon></a>
-            <a href="./carrinho.html"><ion-icon name="cart-sharp" style="color: #f4f3f0;"></ion-icon></a>
-            <a href="./form.php"><ion-icon name="person-circle-sharp" style="color: #f4f3f0;"></ion-icon></a>
-        </div>
+
           
       </div>
     </header>
@@ -247,16 +243,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </fieldset>
     </div>   
     <footer>
-      <div class="sobre">
-        <h2>Sobre nós:</h2>
-        <p>Bem-vindo à nossa loja de camisetas cristãs, onde estilo e fé se encontram. Oferecemos camisetas oversized e casuais com temas cristãos, perfeitas para expressar sua crença de forma autêntica e moderna. Cada peça é criada com amor e dedicação, refletindo mensagens de esperança, amor e fé. Junte-se a nós nessa jornada e vista sua fé com estilo.
-        </p>
-  </div>
-  <div class="cont">
-        <h2>Contatos:</h2>
-        <a href=""><ion-icon name="logo-instagram" style="color: white; font-size: 50px; margin-top: 20px;"></ion-icon></a>
-        <a href=""><ion-icon name="logo-whatsapp" style="color: white; font-size: 50px; margin-top: 20px;"></ion-icon></a>
-  </div> 
 <p>&copy; 2024 JUDITE-Todos os direitos reservados.</p>
       </footer>
 

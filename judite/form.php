@@ -1,27 +1,81 @@
 <?php
- include("config.php");
+include_once("config.php");
 
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $cpf = $_POST['cpf'];
-        $cep = $_POST['cep'];
-        $endereco = $_POST['endereco'];
-        $numero = $_POST['numero'];
-        $complemento = $_POST['complemento'];
-        $telefone = $_POST['telefone'];
+// Verifica se a conexão foi estabelecida corretamente
+if (!$conexao) {
+    die("Falha na conexão: " . mysqli_connect_error());
+}
 
-        $sql = "INSERT INTO usuarios(nome,email,senha,cpf,cep,endereco,numero,complemento,telefone) 
-        VALUES('$nome','$email','$senha','$cpf','$cep','$endereco','$numero','$complemento','$telefone')";
-    
-if(mysqli_query($conexao, $sql)){
-    echo "Usuario cadastrado com sucesso";
+// Coleta os dados do POST e os sanitiza
+$nome = $_POST['nome'] ?? '';
+$email = $_POST['email'] ?? '';
+$senha = $_POST['senha'] ?? '';
+$cpf = $_POST['cpf'] ?? '';
+$cep = $_POST['cep'] ?? '';
+$endereco = $_POST['endereco'] ?? '';
+$numero = $_POST['numero'] ?? '';
+$complemento = $_POST['complemento'] ?? '';
+$telefone = $_POST['telefone'] ?? '';
+
+// Prepara a instrução SQL
+$sql = "INSERT INTO usuarios (nome, email, senha, cpf, cep, endereco, numero, complemento, telefone) 
+        VALUES ('$nome', '$email', '$senha', '$cpf', '$cep', '$endereco', '$numero', '$complemento', '$telefone')";
+
+// Executa a consulta
+if (mysqli_query($conexao, $sql)) {
+    echo "Usuário cadastrado com sucesso";
+} else {
+    // Corrigido para exibir o erro da consulta
+    echo "Erro ao cadastrar usuário: " . mysqli_error($conexao);
 }
-else{
-    echo "Erro".mysqli_connect_error($conexao);
+
+
+// Verifica se houve um envio de formulário
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Recebe os dados do formulário
+  $email = $_POST["email"];
+  $senha = $_POST["senha"];
+
+  // Validação básica (adicione mais validações conforme necessário)
+  if (empty($email) || empty($senha)) {
+      echo "Por favor, preencha todos os campos.";
+  } else {
+      // Prepare a consulta SQL para evitar injeção
+      $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email=? AND senha=?");
+      $stmt->bind_param("ss", $email, $senha); // Assumindo que email e senha são strings
+
+      // Executa a consulta
+      if ($stmt->execute()) {
+          $result = $stmt->get_result();
+
+          if ($result->num_rows > 0) {
+              $row = $result->fetch_assoc();
+
+              // Verifica o tipo de usuário
+              if ($row['tipo'] == 1) {
+                  // Login válido para administrador, redireciona para adm.php
+                  header("Location: adm.php");
+              } else {
+                  // Login válido para outro tipo de usuário, redireciona para home
+                  header("Location: index.html");
+              }
+          } else {
+              echo "Email ou senha inválidos.";
+          }
+      } else {
+          // Trata erros na execução da consulta
+          echo "Erro ao realizar a consulta: " . $stmt->error;
+      }
+
+      $stmt->close();
+  }
 }
-    mysqli_close($conexao);
+
+// Fecha a conexão
+mysqli_close($conexao);
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -145,7 +199,7 @@ else{
 
   <fieldset class="grupo1">
     <h2>Login</h2>     
-  <form action="testelogin.php" method="POST">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
       <label for="email">Email</label>
       <input type="email"id="email"name="email"required placeholder=" seu email">
       <br>

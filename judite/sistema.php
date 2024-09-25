@@ -29,7 +29,64 @@
     <title>JUDITE</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/slide.css">
-    
+    <style>
+      .user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.user-icon a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 200px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.user-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.user-name {
+    font-weight: bold;
+    margin: 0;
+}
+
+.user-email {
+    color: #888;
+    margin: 5px 0;
+}
+
+.logout-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.logout-button:hover {
+    background-color: #c9302c;
+}
+    </style>
     
 </head>
 <body>
@@ -39,9 +96,19 @@
         </div>
 
 <div class="carrinho">
-            <a href="./form_produto.php"><ion-icon name="add-sharp"  style="color: #f4f3f0;"></ion-icon></a>
             <a href="./carrinho.html"><ion-icon name="cart-sharp" style="color: #f4f3f0;"></ion-icon></a>
-            <a href="./form.php"><ion-icon name="person-circle-sharp" style="color: #f4f3f0;"></ion-icon></a>
+            <div class="user-dropdown">
+              <div class="user-icon">
+                 <a href="./form.php"><ion-icon name="person-circle-sharp" style="color: #f4f3f0;"></ion-icon></a> 
+              </div>
+              <div class="dropdown-menu">
+                  <?php
+                    echo "<p>$logado</p>";
+                    ?>
+                    <br>
+                  <a class="logout-button" href="./sair.php">Sair</a>
+              </div>
+          </div>
         </div>
           
       </div>
@@ -49,16 +116,16 @@
 
     <nav>
       <ul>
-          <li><a href="./camisetas.html">Catálogo de camisetas</a></li>
-          <li><a href="./area_infantil.html">Área kids</a></li>
+          <li><a href="./camisetas.php">Catálogo de camisetas</a></li>
+          <li><a href="./area_infantil.php">Área kids</a></li>
       </ul>
   </nav>
 
   <div class="carousel">
     <div class="slides">
-      <div class="slide"><img src="./img.roupas/banner.png" alt="Imagem 1"></div>
-      <div class="slide"><img src="./img.roupas/banner.png" alt="Imagem 2"></div>
-      <div class="slide"><img src="./img.roupas/banner.png" alt="Imagem 3"></div>
+      <div class="slide"><img src="./img.roupas/1.png" alt="Imagem 1"></div>
+      <div class="slide"><img src="./img.roupas/2.png" alt="Imagem 2"></div>
+      <div class="slide"><img src="./img.roupas/3.png" alt="Imagem 3"></div>
     </div>
     <button class="prev" onclick="prevSlide()">❮</button>
     <button class="next" onclick="nextSlide()">❯</button>
