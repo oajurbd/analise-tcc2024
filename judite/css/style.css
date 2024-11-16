@@ -93,26 +93,29 @@ main {
   color: rgb(255, 255, 255);
   margin-top: 20px;
   padding: 10px;
+  opacity: 60%;
 }
 
 .banner2{
   text-align: center;
-  padding: 70px;
-  background: #2e9599;
+  padding: 50px;
+  background: #3d9da0;
   color: black;
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
+  opacity: 85%;
 }
 
 .banner4{
   text-align: center;
-  padding: 70px;
+  padding: 50px;
   background: #f46c3f;
   color: black;
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
+  opacity: 85%;
 }
 
 
@@ -132,38 +135,63 @@ main {
    
 }
 
-.lista-produtos{
-  display: flex;
+.card{
+  display: inline;
   flex-wrap: wrap;
   justify-content: space-around;
+  box-shadow: 0px 2px 3px rgb(99, 99, 99);
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 15px;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .produto{
-  width: 400px;
-  margin-bottom: 50px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  transition: 0.3s;
-  box-shadow: 0px 2px 3px rgb(99, 99, 99);
+  padding: 20px;
+  display: grid;
+  grid-template-columns:  24vw 24vw 24vw 24vw;
 }
-
-.produto h3{
-  font-size: 25px;
+.card h3{
+  font-size: 30px;
   padding: 5px;
 }
-.produto p{
+.card p{
   font-size: 25px;
   color: #747474;
   margin-bottom: 10px;
 }
 
-.produto img {
+.card img {
   width: 100%;
   border-radius: 5px;
 }
 
-.produto:hover{
+.card:hover{
   transform: scale(1.03);
+  transition: 0.5s;
+
+}
+
+button {
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  color: #000000;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: #cbcbcb;                   
+  padding: 10px 20px;             
+  font-size: 20px;              
+  font-weight: bold;            
+  border-radius: 5px;            
+  cursor: pointer;              
+  transition: all 0.3s ease;   
+}
+button:hover{
+  background-color: #ff98b3;
+  transform: scale(1.05); 
 }
 
 footer {
@@ -175,6 +203,7 @@ footer {
   width: 100%;
   font-size: 20px;
   margin-top: 30px;
+  
 }
 footer p{
   padding: 30px;
@@ -196,3 +225,18 @@ footer p{
   font-size: 15px;
   justify-content: space-between;
 }
+
+.sobre_nos{
+  width: 50%;
+  font-size: 20px;
+  margin: 30px;
+  display: inline;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+

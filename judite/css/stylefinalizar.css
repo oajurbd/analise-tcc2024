@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  
+}
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border:1px solid #000;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 20px;
+}
+.form-container h2 {
+    margin-bottom: 20px;
+}
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="number"],
+.form-container input[type="submit"],
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-container button {
+    background-color: #ff89a9;
+    color: white;
+    border: none;
+}
+.form-container button:hover {
+    background-color: #dc6b89;
+}
+fieldset {
+    border: 1px solid #ffffff;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}

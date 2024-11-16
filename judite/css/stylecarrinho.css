@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.container {
+  display: flex;
+  justify-content: center;        
+}
+
+table {
+  width: 95%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 3px rgb(99, 99, 99);
+  padding: 10px;
+  border: 1px solid #ccc;
+  justify-content: center;
+  align-items: center;
+
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-size: 20px;
+  background-color: #ff89a9;
+}
+
+
+
+td form {
+  display: inline-block;
+}
+
+.remove-btn {
+  background-color: #ff4d4d;      
+  color: white;                   
+  border: none;                   
+  padding: 10px 20px;             
+  font-size: 15px;              
+  font-weight: bold;            
+  border-radius: 5px;            
+  cursor: pointer;              
+  transition: all 0.3s ease;   
+}
+
+.remove-btn:hover {
+  background-color: #ff1a1a;      
+  transform: scale(1.05);          
+}
+
+.remove-btn:active {
+  background-color: #cc0000;      
+  transform: scale(0.98);          
+}
+
+.remove-btn:focus {
+  outline: none;               
+  box-shadow: 0 0 5px rgba(255, 77, 77, 0.8); 
+}
+
+
+/* Container principal que envolve todos os elementos */
+.total {
+  display: flex;
+  flex-direction: column;   /* Organiza os itens em uma coluna */
+  align-items: center;      /* Centraliza os itens horizontalmente */
+  justify-content: center;  /* Centraliza os itens verticalmente */
+  text-align: center;       /* Centraliza o texto dentro dos elementos */
+  gap: 20px;                /* Espaçamento entre o total e os botões */
+}
+
+/* Estilo do Total */
+.total h2 {
+  font-size: 24px;          /* Tamanho maior para destacar o total */
+  font-weight: bold;        /* Deixa o total em negrito */
+  color: #333;              /* Cor escura para o total */
+}
+
+/* Estilo para o contêiner de botões */
+.buttons {
+  display: flex;            /* Alinha os botões horizontalmente */
+  gap: 20px;                /* Espaçamento entre os botões */
+}
+
+/* Estilos para os botões */
+.finalizar-compra-btn {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Estilo do botão Finalizar Compra */
+.finalizar-compra-btn {
+  margin: 5px;
+  background-color: #28a745;  /* Cor verde */
+  color: white;
+  border: none;
+}
+
+/* Estilo do botão Voltar aos Produtos */
+.voltar-produtos {
+  font-size: 20px;
+}
+
+
+/* Efeitos de hover e active nos botões */
+.finalizar-compra-btn:hover {
+  transform: scale(1.05);  /* Aumenta o botão ao passar o mouse */
+}
+
+.finalizar-compra-btn:active {
+  transform: scale(0.98);  /* Diminui o botão ao clicar */
+}
+

@@ -101,7 +101,7 @@ if (!$result) {
 <header>
     
         <div class="logo">
-         <a href="./index.html"><img src="./logojudite.png" alt=""></a>
+         <a href="./adm.php"><img src="./logojudite.png" alt=""></a>
         </div>
         <div class="sair">
         <a href="sair.php" class="btn btn-danger me-5">Sair</a>

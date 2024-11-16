@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUDITE</title>
+    <title>HOPE</title>
     <link rel="stylesheet" href="./css/styleadm.css">
     
     
@@ -12,7 +12,7 @@
 <header>
     
         <div class="logo">
-         <a href="./index.html"><img src="./logojudite.png" alt=""></a>
+         <a href="./adm.php"><img src="./logojudite.png" alt=""></a>
         </div>
         
 </header>
@@ -23,7 +23,7 @@
 <section class="contato">
     <a href="./lista_cliente.php"><button>Lista de clientes</button></a>
     <a href="./form_produto.php"><button>Cadastrar produto</button></a>
-    <a href="./index.html"><button>Visualizar camisetas</button></a>
+    <a href="./camisetas.php"><button>Visualizar camisetas</button></a>
                 
     </section>
 

@@ -186,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 <header>
         <div class="logo">
-         <a href="./index.html"><img src="./logojudite.png" alt=""></a>
+         <a href="./adm.php"><img src="./logojudite.png" alt=""></a>
         </div>
 
 

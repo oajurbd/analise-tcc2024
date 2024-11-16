@@ -6,9 +6,8 @@
     {
         unset($_SESSION['email']);
         unset($_SESSION['senha']);
-        header('Location: form.php');
     }
-    $logado = $_SESSION['email'];
+
     if(!empty($_GET['search']))
     {
         $data = $_GET['search'];
@@ -26,7 +25,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUDITE</title>
+    <title>HOPE</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/slide.css">
     <style>
@@ -92,20 +91,17 @@
 <body>
     <header>
         <div class="logo">
-         <a href="./index.html"><img src="./logojudite.png" alt=""></a>
+         <a href="./index.php"><img src="./logojudite.png" alt=""></a>
         </div>
 
 <div class="carrinho">
-            <a href="./carrinho.html"><ion-icon name="cart-sharp" style="color: #f4f3f0;"></ion-icon></a>
+            <a href="./carrinho.php"><ion-icon name="cart-sharp" style="color: #f4f3f0;"></ion-icon></a>
             <div class="user-dropdown">
               <div class="user-icon">
-                 <a href="./form.php"><ion-icon name="person-circle-sharp" style="color: #f4f3f0;"></ion-icon></a> 
+                 <ion-icon name="person-circle-sharp" style="color: #f4f3f0;"></ion-icon>
               </div>
+              
               <div class="dropdown-menu">
-                  <?php
-                    echo "<p>$logado</p>";
-                    ?>
-                    <br>
                   <a class="logout-button" href="./sair.php">Sair</a>
               </div>
           </div>
@@ -130,98 +126,8 @@
     <button class="prev" onclick="prevSlide()">❮</button>
     <button class="next" onclick="nextSlide()">❯</button>
   </div>
-
-    <main>
     
-        <section>
-            <h2 style="font-size: 30px; color: #8A3130; margin-bottom: 15px;">Nossos Produtos</h2>
-            
-<!--4 cards por linha-->
-
-               
-              <div class="lista-produtos">  
-                <div class="produto">
-                  <a href="./info-prod-fem/prod10.html"><img src="./img.roupas/camisetas.fem/fem (10).png" alt="Produto 2"></a>
-                  <h3>YHWH</h3>
-                  <p>R$ 60,00</p>
-                </div>
-
-                <div class="produto">
-                  <a href="./info-prod-fem/prod11.html"><img src="./img.roupas/camisetas.fem/fem (11).png" alt="Produto 1"></a>
-                  <h3>Maranatha "Come lord Jesus"</h3>
-                  <p>R$ 60,00</p>
-              </div>
-
-              <div class="produto">
-                <a href="./info-prod-fem/prod12.html"><img src="./img.roupas/camisetas.fem/fem (12).png" alt="Produto 1"></a>
-                  <h3>YHWH </h3>
-                  <p>R$ 60,00</p>
-              </div>
-
-              <div class="produto">
-                <a href="./info-prod-fem/prod9.html"><img src="./img.roupas/camisetas.fem/fem (9).png" alt="Produto 1"></a>
-                <h3>Lucas 12:27</h3>
-                <p>R$ 60,00</p>
-              </div>
-            </div>
-<!--4 cards por linha-->
-
-              <div class="lista-produtos">  
-                <div class="produto">
-                  <a href="./info-prod-masc/prod10.html"><img src="./img.roupas/camisetas.masc/masc (10).png" alt="Produto 1"></a>
-                  <h3>Alfa e omega</h3>
-                  <p>R$ 60,00</p>
-                </div>
-
-                <div class="produto">
-                  <a href="./info-prod-masc/prod9.html"><img src="./img.roupas/camisetas.masc/masc (9).png" alt="Produto 1"></a>
-                  <h3>JIREH</h3>
-                  <p>R$ 60,00</p>
-              </div>
-
-              <div class="produto">
-                <a href="./info-prod-masc/prod8.html"><img src="./img.roupas/camisetas.masc/masc (8).png" alt="Produto 1"></a>
-                  <h3>Be the light</h3>
-                  <p>R$ 60,00</p>
-              </div>
-
-              <div class="produto">
-                <a href="./info-prod-masc/prod13.html"><img src="./img.roupas/camisetas.masc/masc (13).png" alt="Produto 1"></a>
-                <h3>Fishers of men</h3>
-                <p>R$ 60,00</p>
-              </div>
-            </div>
-<!--4 cards por linha-->
-
-
-            <div class="lista-produtos">  
-              <div class="produto">
-                <a href="./info-prod-kids/prod6.html"><img src="./img.roupas/camisetas.kids/6kids.png" alt="Produto 1"></a>
-                <h3>Não temas</h3>
-                <p>R$ 60,00</p>
-              </div>
-
-              <div class="produto">
-                <a href="./info-prod-kids/prod8.html"><img src="./img.roupas/camisetas.kids/8kids.png" alt="Produto 1"></a>
-                <h3>Jesus over everything</h3>
-                <p>R$ 60,00</p>
-            </div>
-
-            <div class="produto">
-              <a href="./info-prod-kids/prod9.html"><img src="./img.roupas/camisetas.kids/9kids.png" alt="Produto 1"></a>
-                <h3>Lucas 10:27</h3>
-                <p>R$ 60,00</p>
-            </div>
-
-            <div class="produto">
-              <a href="./info-prod-kids/prod3.html"><img src="./img.roupas/camisetas.kids/3kids.png" alt="Produto 1"></a>
-              <h3>All my worth is in the cross</h3>
-              <p>R$ 60,00</p>
-            </div>
-          </div>
-        </section>
-    </main>
-
+        
   <footer>
           <div class="sobre">
                 <h2>Sobre nós:</h2>

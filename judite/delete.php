@@ -1,13 +1,14 @@
 <?php
+session_start();
 include_once('config.php');
 
-if (!empty($_GET['email'])) {
-    $email = mysqli_real_escape_string($conexao, $_GET['email']);
+if (!empty($_GET['id_usuario'])) {
+    $id_usuario = mysqli_real_escape_string($conexao, $_GET['id_usuario']);
 
     // Prepare the SELECT query
-    $sqlSelect = "SELECT * FROM usuarios WHERE email=?";
+    $sqlSelect = "SELECT * FROM usuarios WHERE id_usuario=?";
     $stmtSelect = $conexao->prepare($sqlSelect);
-    $stmtSelect->bind_param("s", $email);
+    $stmtSelect->bind_param("i", $id_usuario);
 
     // Execute the SELECT query
     if ($stmtSelect->execute()) {
@@ -15,9 +16,9 @@ if (!empty($_GET['email'])) {
 
         if ($result->num_rows > 0) {
             // Prepare the DELETE query
-            $sqlDelete = "DELETE FROM usuarios WHERE email=?";
+            $sqlDelete = "DELETE FROM usuarios WHERE id_usuario=?";
             $stmtDelete = $conexao->prepare($sqlDelete);
-            $stmtDelete->bind_param("s", $email);
+            $stmtDelete->bind_param("i", $id_usuario);
 
             // Execute the DELETE query
             if ($stmtDelete->execute()) {
@@ -37,4 +38,5 @@ if (!empty($_GET['email'])) {
     $stmtDelete->close();
 }
 
-header('Location: listacliente.php');
+header('Location: lista_cliente.php');
+?>
